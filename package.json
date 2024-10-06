@@ -4,7 +4,7 @@
   "author": "moraxs",
   "scripts": {
     "dev": "vite --mode development",
-    "build": "node build.js",
+    "build": "vite build",
     "preview": "vite preview",
     "build:dev": "vite build --mode development",
     "serve": "vite preview",
@@ -12,7 +12,9 @@
     "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "deps": "yarn upgrade-interactive --latest"
+    "deps": "yarn upgrade-interactive --latest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@arco-design/web-vue": "^2.25.2",
